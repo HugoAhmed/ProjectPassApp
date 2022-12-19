@@ -67,6 +67,7 @@ class LoginActivity : AppCompatActivity() {
         //Comprobando que todos los campos esten llenos
         if(!TextUtils.isEmpty(user) && !TextUtils.isEmpty(password))
         {
+
             progressBar.visibility=View.VISIBLE
 
             //Inicio de sesion
@@ -87,6 +88,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+
+    //intento de usar la huella dactilar
     private fun setupAuth()
     {
         if(BiometricManager.from(this).canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG

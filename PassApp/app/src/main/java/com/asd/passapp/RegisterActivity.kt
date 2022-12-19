@@ -32,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        //verificando los ids.
+        //verificando los id
         txtName=findViewById(R.id.txtName)
         txtLastName=findViewById(R.id.txtLastName)
         txtEmail=findViewById(R.id.txtEmail)
@@ -47,7 +47,6 @@ class RegisterActivity : AppCompatActivity() {
 
 
     }
-    //al darle al boton, se ejecuta la creacion del usuario
     fun register(view:View){
         createNewAccount()
     }

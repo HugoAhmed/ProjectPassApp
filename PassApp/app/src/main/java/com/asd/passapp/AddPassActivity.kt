@@ -1,12 +1,12 @@
 package com.asd.passapp
 
+import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.contentValuesOf
 import com.asd.passapp.BaseDeDatos.SQLite
 
 class AddPassActivity : AppCompatActivity() {
@@ -35,7 +35,7 @@ class AddPassActivity : AppCompatActivity() {
 
         if(sitio.isEmpty()==false && email.isEmpty()==false && pass.isEmpty()==false)
         {
-            var registro= contentValuesOf()
+            var registro= ContentValues()
             registro.put("sitio", sitio)
             registro.put("email", email)
             registro.put("pass", pass)

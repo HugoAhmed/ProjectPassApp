@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
+import com.asd.passapp.BaseDeDatos.SQLite
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +29,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, AddPassActivity::class.java))
         }
 
+        fun logout(view: View)
+        {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+
         fun inicializar()
         {
             txtSitio = findViewById(R.id.txtSitio)
@@ -38,17 +44,17 @@ class MainActivity : AppCompatActivity() {
 
     fun search(view: View)
     {
-        val con=SQlite(this, "passapp", null, 1)
+        val con=SQLite(this, "passapp", null, 1)
         val dataBase=con.writableDatabase
         val sitio=txtSitio?.text.toString()
 
     }
 
 
-    //Da error en el select
+    //No funciona
     fun llenarTabla()
     {
-        val con= SQlite(this, "PassApp", null, 1)
+        val con= SQLite(this, "passapp", null, 1)
         val dataBase=con.writableDatabase
         val fila=dataBase.rawQuery("SELECT sitio, email, pass FROM passapp ", null)
         fila.moveToFirst()
